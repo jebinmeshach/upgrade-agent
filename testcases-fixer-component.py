@@ -142,10 +142,3 @@ def fix_failing_tests(project_path, failing_tests):
                 time.sleep(2)
         else:
             print(f"❌ Failed to fix {class_name}.{method} after 3 attempts.")
-
-if __name__ == "__main__":
-    REPO_PATH = r""
-    run_maven_tests(REPO_PATH)
-    failing_tests, _ = parse_surefire_reports(REPO_PATH)
-    if failing_tests:
-        fix_failing_tests(REPO_PATH, failing_tests)
